@@ -1,13 +1,17 @@
+import Link from "next/link";
 import { ModeToggle } from "./components/shared/ModeToggle";
 import SignupPage from "./components/signup";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <SignupPage />
-      <div className="absolute top-6 right-6">
-        <ModeToggle />
-      </div>
+      <Link href="/signup">
+        <Button>signup</Button>
+      </Link>
+      <Link href="/login">
+        <Button>login</Button>
+      </Link>
     </main>
   );
 }
