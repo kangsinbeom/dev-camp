@@ -1,5 +1,5 @@
-import { ModeToggle } from "./shared/ModeToggle";
-import SignupPage from "./signup";
+import { ModeToggle } from "./components/shared/ModeToggle";
+import SignupPage from "./components/signup";
 
 export default function Home() {
   return (
