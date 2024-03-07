@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import {
   Select,
   SelectContent,
@@ -10,14 +8,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { forwardRef } from "react";
 
 interface SelectFieldProps {
   label: string;
   items: string[];
   placeholder: string;
 }
-
-export function SelectField({ label, items, placeholder }: SelectFieldProps) {
+const SelectField = forwardRef(function SelectField(
+  { label, items, placeholder }: SelectFieldProps,
+  ref
+) {
   return (
     <div className={`grid w-full max-w-sm items-center gap-3 mt-5`}>
       <Label htmlFor="picture">{label}</Label>
@@ -37,4 +38,6 @@ export function SelectField({ label, items, placeholder }: SelectFieldProps) {
       </Select>
     </div>
   );
-}
+});
+
+export default SelectField;
