@@ -12,6 +12,9 @@ export default function Home() {
       <Link href="/login">
         <Button>login</Button>
       </Link>
+      <Link href="/account">
+        <Button>account</Button>
+      </Link>
     </main>
   );
 }
