@@ -10,7 +10,13 @@ interface ProductInfoProps {
 const ProductInfo = ({ amount, name, price }: ProductInfoProps) => {
   return (
     <div className="flex">
-      <Image src="" alt="product image" height={100} width={100} />
+      <Image
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_UVig9N_T_aVFtnzzI3sOKgGpqgzHfMVKdLtXk0vvD-dH4zsCKWPMjAX4eLRXWYbS6Lk&usqp=CAU"
+        alt="product image"
+        height={100}
+        width={100}
+        priority
+      />
       <div className="flex flex-col gap-1">
         <p>{name}</p>
         <div className="flex gap-1">
