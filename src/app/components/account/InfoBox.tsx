@@ -1,3 +1,7 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+
 interface InfoBoxProps {
   title?: string;
   content: React.ReactNode;
@@ -5,8 +9,16 @@ interface InfoBoxProps {
 }
 
 const InfoBox = ({ title, content, bottom }: InfoBoxProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  useLayoutEffect(() => {
+    if (ref.current) {
+      const currentHeigth = ref.current.getBoundingClientRect().height;
+      const currentSpan = Math.ceil((currentHeigth + 16) / (20 + 16));
+      ref.current.style.gridRowEnd = `span ${currentSpan}`;
+    }
+  }, []);
   return (
-    <div className="bg-white p-5 relative">
+    <div id="grid" ref={ref} className={`bg-white p-5 relative h-fit`}>
       {title && <p className="font-bold pb-5 text-lg">{title}</p>}
       <div className="pb-7">{content}</div>
       {bottom && bottom}
